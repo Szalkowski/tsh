@@ -1,3 +1,10 @@
 @import "variables";
 @import "mixins";
+@import "icomoon";
 @import "globals";
+
+/* COMPONENTS */
+@import "components/header";
+@import "components/buttons";
+@import "components/search";
+@import "components/filters";

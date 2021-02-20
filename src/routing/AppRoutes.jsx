@@ -3,16 +3,20 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { Login } from '../app/login/Login';
 import { Products } from '../app/products/Products';
+import { Header } from '../app/header/Header';
 
 import { AppRoute } from './AppRoute.enum';
 
 export const AppRoutes = () => {
-  return (
-    <Switch>
-      <Route path={AppRoute.home} exact component={Products} />
-      <Route path={AppRoute.login} component={Login} />
+    return (
+        <>
+            <Header/>
+            <Switch>
+                <Route path={AppRoute.home} exact component={Products}/>
+                <Route path={AppRoute.login} component={Login}/>
 
-      <Redirect to={AppRoute.home} />
-    </Switch>
-  );
+                <Redirect to={AppRoute.home}/>
+            </Switch>
+        </>
+    );
 };

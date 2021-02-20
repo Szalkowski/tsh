@@ -1,0 +1,22 @@
+header {
+  background-color: #fff;
+
+  .header {
+    @include flex(center, space-between);
+    padding: 48px 0 32px;
+
+    &__avatar {
+      border-radius: 50%;
+    }
+
+    .btn {
+      padding: 11px 24px;
+    }
+  }
+
+  .search {
+    &__filters {
+      margin-top: 29px;
+    }
+  }
+}
