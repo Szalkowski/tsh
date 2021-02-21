@@ -2,7 +2,7 @@ import React from 'react';
 import { AppRoute } from '../../routing/AppRoute.enum';
 import { Link } from 'react-router-dom';
 
-export function Header({ device, logged = false }) {
+export function Header({ logged = false }) {
     return (
         <header>
             <div className="container">
@@ -15,9 +15,9 @@ export function Header({ device, logged = false }) {
                              alt="avatar"
                              className="header__avatar"
                         /> :
-                        <button className="btn btn__transparent btn__transparent--blue">
+                        <Link to={AppRoute.login} className="btn btn__transparent btn__transparent--blue">
                             Log in
-                        </button>
+                        </Link>
                     }
                     <div className="header__search search">
                         <div className="search__input">
