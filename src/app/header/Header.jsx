@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppRoute } from '../../routing/AppRoute.enum';
 import { Link } from 'react-router-dom';
+import { Search } from '../../components/search';
 
 export function Header({ logged = false }) {
     return (
@@ -19,32 +20,7 @@ export function Header({ logged = false }) {
                             Log in
                         </Link>
                     }
-                    <div className="header__search search">
-                        <div className="search__input">
-                            <input type="text"
-                                   placeholder="Search"
-                            />
-                            <button className="btn">
-                                <i className="icon iconsearch"/>
-                            </button>
-                        </div>
-                        <div className="filters search__filters">
-                            <div className="filters__filter">
-                                <input type="checkbox"
-                                       id="active"
-                                       name="active"
-                                />
-                                <label htmlFor="active">Active</label>
-                            </div>
-                            <div className="filters__filter">
-                                <input type="checkbox"
-                                       id="promo"
-                                       name="promo"
-                                />
-                                <label htmlFor="promo">Promo</label>
-                            </div>
-                        </div>
-                    </div>
+                    <Search classname="header__search"/>
                 </div>
             </div>
         </header>
