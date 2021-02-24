@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { Login } from '../app/login/Login';
 import { Products } from '../app/products/Products';
-import { Header } from '../app/header/Header';
+import { Header } from '../components/Header';
 
 import { AppRoute } from './AppRoute.enum';
 

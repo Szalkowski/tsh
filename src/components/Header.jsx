@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppRoute } from '../../routing/AppRoute.enum';
+import { AppRoute } from '../routing/AppRoute.enum';
 import { Link } from 'react-router-dom';
-import { Search } from '../../components/search';
+import { Search } from './Search';
 
 export function Header({ logged = false }) {
     return (
@@ -12,7 +12,7 @@ export function Header({ logged = false }) {
                         <Link to={AppRoute.home}>join.tsh.io</Link>
                     </h1>
                     {logged ?
-                        <img src={require('./../../assets/images/avatar.jpg')}
+                        <img src={require('../assets/images/avatar.jpg')}
                              alt="avatar"
                              className="header__avatar"
                         /> :

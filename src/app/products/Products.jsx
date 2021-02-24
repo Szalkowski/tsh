@@ -1,20 +1,25 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import qs from 'querystring';
-import { AppRoute } from '../../routing/AppRoute.enum';
 import { fetchProducts } from '../../shared/fetchProducts';
+import { ItemBox } from '../../components/ItemBox';
+import { NoItems } from '../../components/NoItems';
 
 export const Products = ({ location }) => {
+    const [items, setItems] = useState([]);
     const query = qs.parse(location.search.substring(1));
 
     useEffect(() => {
-        fetchProducts('/products', query);
-    }, [query]);
-
+        getItems().then(resp => setItems(resp.items));
+    }, [location.search]);
+    const getItems = async () => await fetchProducts('/products', query);
     return (
         <>
-            <h2>Products page</h2>
-            <Link to={AppRoute.login}> Login </Link>
+            {(items && items.length > 0) ?
+                items.map(item =>
+                    <ItemBox key={item.id} item={item}/>
+                ) :
+                <NoItems/>
+            }
         </>
     );
 };

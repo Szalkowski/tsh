@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Filters } from './filters';
+import { Filters } from './Filters';
 
 export function Search({ classname }) {
     const [searchValue, setSearchValue] = useState('');
